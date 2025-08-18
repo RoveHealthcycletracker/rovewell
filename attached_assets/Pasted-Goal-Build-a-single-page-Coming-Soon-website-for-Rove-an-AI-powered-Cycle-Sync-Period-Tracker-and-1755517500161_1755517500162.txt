@@ -1,0 +1,117 @@
+Goal: Build a single-page Coming Soon website for Rove — an AI‑powered Cycle‑Sync Period Tracker and Cycle‑Sync Supplement brand for Indian women.
+
+Overall Aesthetic:
+
+Tech × Clinical duality: dark, modern, “AI lab” vibe + soft, clinical trust.
+
+Background: deep plum/ink gradient with a subtle animated grid and a faint ECG/molecule line moving slowly across the hero.
+
+Foreground cards: glassmorphism (backdrop‑blur, soft borders, ivory highlights).
+
+Typography: Inter (or similar), premium, spacious.
+
+Color tokens:
+
+Background: #0D0A10 → #1A0F1A gradient
+
+Accents: plum #6E3B6E, blush #F4C4D4, mint #CFE8E5, ivory #F6F2F8
+
+Micro‑animations: fade/slide on scroll, hover lift on cards, gentle button pulse.
+
+Structure (single page, anchored nav):
+
+Hero (Top)
+
+H1: “Cycle‑Synced Wellness, Powered by AI.”
+
+Sub: “A medical‑grade coach that adapts your diet, exercise, and care to each phase of your cycle.”
+
+Primary CTA button → “Join Waitlist” (scroll to form)
+
+Secondary CTA (ghost) → “Learn More” (scroll to teasers)
+
+Background: animated tech grid + subtle ECG/molecule line; soft gradient glow behind H1.
+
+Dual Teaser (Two cards side‑by‑side on desktop, stacked on mobile)
+
+Card A — AI Cycle‑Sync Tracker
+
+Title: “Rove AI Cycle Coach”
+
+Copy: “Phase‑aware daily plans for Indian women — meals, workouts, and gentle habit nudges, all personalized.”
+
+Bullets (tiny, with icons): “Period tracking & forecasts • Phase‑matched plans • ‘Why?’ answers with medical references”
+
+Micro‑visual: animated cycle wave or dotted DNA arc.
+
+Card B — Cycle‑Sync Supplement
+
+Title: “Phase‑wise Supplement System”
+
+Copy: “Clinically reviewed formulations aligned to menses, follicular, ovulation, and luteal needs.”
+
+Bullets: “India‑native ingredients • Clean label • Timing matched to your phase”
+
+Micro‑visual: elegant bottle silhouette with a soft halo/glass reflection.
+
+Trust & Clinical Notes (Badges row)
+
+Badges (minimal): Doctor‑led, Evidence‑aware, DPDP‑aligned privacy, India‑native nutrition
+
+One line: “Medical background × AI rigor. Privacy‑first by design.”
+
+Waitlist (Email form)
+
+Heading: “Be first to meet Rove.”
+
+Fields: Email (required), Name (optional), Goal (select: Cycle Regularity / PCOS / TTC soon / General Wellness)
+
+Consent checkbox: “I agree to receive early access updates.”
+
+Submit → show success state with soft glow + confetti dots.
+
+(Stub the handler now; we’ll wire Supabase later.)
+
+Footer
+
+Minimal links: Privacy • Instagram • LinkedIn
+
+© Rove Health. Tagline: “Launching soon — stay in rhythm.”
+
+Interactions & Tech:
+
+Mobile‑first responsive.
+
+Smooth scroll to anchors.
+
+Framer Motion (or lightweight CSS) for reveal animations.
+
+Buttons: rounded‑xl, soft shadow bloom on hover.
+
+Copy to use (exact):
+
+Hero H1: “Cycle‑Synced Wellness, Powered by AI.”
+
+Hero sub: “A medical‑grade coach that adapts your diet, exercise, and care to each phase of your cycle.”
+
+Primary CTA: “Join Waitlist”
+
+Dual Card Titles: “Rove AI Cycle Coach” • “Phase‑wise Supplement System”
+
+Dual Card subs (as written above).
+
+Badges: “Doctor‑led • Evidence‑aware • DPDP‑aligned • India‑native”
+
+Waitlist heading: “Be first to meet Rove.”
+
+Implementation details:
+
+Use Tailwind CSS for speed (or plain CSS if preferred).
+
+Create a simple /waitlist POST endpoint (mock): console.log submissions and return { ok: true }.
+
+Add Open Graph/Twitter meta tags (title + description).
+
+Acceptance:
+
+One polished, animated page; teasers for both the AI tracker and supplement; primary Join Waitlist flow works and shows success state; layout looks premium on mobile & desktop.

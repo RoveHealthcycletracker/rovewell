@@ -1,0 +1,777 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rove Health - AI-Powered Cycle Sync Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rove-purple': '#7C3AED',
+                        'rove-blue': '#4F46E5',
+                        'medical-green': '#10B981',
+                        'clinical-gray': '#F8FAFC'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fade-in-up 0.8s ease-out',
+                        'cycle-rotate': 'cycle-rotate 8s linear infinite'
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cycle-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #4F46E5, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-inter bg-gradient-to-br from-clinical-gray via-white to-blue-50 min-h-screen">
+
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-rove-blue to-rove-purple rounded-lg flex items-center justify-center">
+                        <i class="fas fa-heartbeat text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">Rove Health</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#technology" class="text-gray-600 hover:text-rove-blue transition-colors">Technology</a>
+                    <a href="#products" class="text-gray-600 hover:text-rove-blue transition-colors">Products</a>
+                    <a href="#science" class="text-gray-600 hover:text-rove-blue transition-colors">Science</a>
+                    <button data-event="click:scrollToWaitlist" class="bg-gradient-to-r from-rove-blue to-rove-purple text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300">
+                        Join Waitlist
+                    </button>
+                </div>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="relative pt-24 pb-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-fade-in-up">
+                    <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-medical-green/10 to-rove-blue/10 px-4 py-2 rounded-full border border-medical-green/20">
+                        <div class="w-2 h-2 bg-medical-green rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium text-gray-700">AI-Powered Health Technology</span>
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                        <span class="gradient-text">Sync Your Cycle</span><br>
+                        <span class="text-gray-800">with Science</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Revolutionary AI-powered period tracking meets clinically-backed cycle sync supplements. 
+                        Experience the future of women's health technology.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button data-event="click:joinWaitlistTracker" class="bg-gradient-to-r from-rove-blue to-rove-purple text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fas fa-mobile-alt mr-2"></i>
+                            Join AI Tracker Waitlist
+                        </button>
+                        <button data-event="click:joinWaitlistSupplements" class="border-2 border-medical-green text-medical-green px-8 py-4 rounded-full font-semibold hover:bg-medical-green hover:text-white transition-all duration-300">
+                            <i class="fas fa-pills mr-2"></i>
+                            Join Supplements Waitlist
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center space-x-6 text-sm text-gray-500">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-medical-green"></i>
+                            <span>Clinically Validated</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-user-md text-rove-blue"></i>
+                            <span>Doctor Approved</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-lock text-purple-500"></i>
+                            <span>Privacy First</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Medical technology interface background -->
+                    <!-- A futuristic medical interface with holographic displays and health data visualizations -->
+                    <div class="relative z-10">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Medical technology interface" 
+                             class="rounded-2xl shadow-2xl animate-float" />
+                        
+                        <!-- Floating UI Elements -->
+                        <div class="absolute -top-4 -right-4 glass-effect rounded-2xl p-4 animate-pulse-slow">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gradient-to-r from-medical-green to-emerald-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-brain text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-semibold text-gray-800">AI Analysis</div>
+                                    <div class="text-xs text-gray-500">99.2% Accuracy</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -left-6 glass-effect rounded-2xl p-4 animate-float" style="animation-delay: -2s;">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gradient-to-r from-rove-blue to-rove-purple rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-calendar-alt text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-semibold text-gray-800">Cycle Sync</div>
+                                    <div class="text-xs text-gray-500">Day 14 Predicted</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Animated Background Elements -->
+                    <div class="absolute inset-0 -z-10">
+                        <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-rove-blue/20 to-transparent rounded-full animate-cycle-rotate"></div>
+                        <div class="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-r from-medical-green/20 to-transparent rounded-full animate-pulse-slow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Technology Overview -->
+    <section id="technology" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">
+                    <span class="gradient-text">Where Technology</span>
+                    <span class="text-gray-800"> Meets Medicine</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our proprietary AI algorithms combine with clinical research to deliver unprecedented insights into your cycle health.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- @MAP: techFeatures.map(feature => ( -->
+                <div class="group p-8 rounded-2xl border border-gray-200 hover:border-rove-blue/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-rove-blue to-rove-purple rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">AI-Powered Predictions</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Advanced machine learning algorithms analyze your unique patterns to predict cycles with 99.2% accuracy.
+                    </p>
+                </div>
+                
+                <div class="group p-8 rounded-2xl border border-gray-200 hover:border-medical-green/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-medical-green to-emerald-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-flask text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Clinical Research</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Every feature is backed by peer-reviewed research and validated by leading reproductive health specialists.
+                    </p>
+                </div>
+                
+                <div class="group p-8 rounded-2xl border border-gray-200 hover:border-purple-500/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-sync-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Cycle Synchronization</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Personalized supplement recommendations designed to optimize your natural cycle rhythm and hormonal balance.
+                    </p>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Technology Overview -->
+
+    <!-- @COMPONENT: Products Showcase -->
+    <section id="products" class="py-20 bg-gradient-to-br from-clinical-gray to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Revolutionary Products Coming Soon</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Be among the first to experience the future of women's health technology.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- AI Period Tracker -->
+                <div class="group">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gradient-to-r from-rove-blue to-rove-purple rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-mobile-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-800">AI Period Tracker</h3>
+                                    <span class="inline-block bg-rove-blue/10 text-rove-blue text-xs px-3 py-1 rounded-full font-medium">Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Women's health technology interface -->
+                        <img src="https://pixabay.com/get/g8abfb0eb4249f7b448fd47abcced95685371d915d6994de7771694f254bdf4cb16550799def330dd3430df6c790b4a2a4ef73285a6a26761b7c658db67089b81_1280.jpg" 
+                             alt="Women's health technology interface" 
+                             class="w-full h-64 object-cover rounded-2xl mb-6" />
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">AI-powered cycle prediction with 99.2% accuracy</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">Personalized health insights and recommendations</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">Symptom tracking with pattern recognition</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">Integration with wearables and health apps</span>
+                            </div>
+                        </div>
+                        
+                        <button data-event="click:joinTrackerWaitlist" class="w-full bg-gradient-to-r from-rove-blue to-rove-purple text-white py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fas fa-bell mr-2"></i>
+                            Notify Me When Available
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Cycle Sync Supplements -->
+                <div class="group">
+                    <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gradient-to-r from-medical-green to-emerald-400 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-pills text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-800">Cycle Sync Supplements</h3>
+                                    <span class="inline-block bg-medical-green/10 text-medical-green text-xs px-3 py-1 rounded-full font-medium">Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Health supplements with natural ingredients -->
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                             alt="Health supplements with natural ingredients" 
+                             class="w-full h-64 object-cover rounded-2xl mb-6" />
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">Clinically-tested natural ingredients</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">Personalized formulations based on your cycle</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">Hormone balance and PMS relief support</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-medical-green"></i>
+                                <span class="text-gray-700">Monthly subscription with cycle timing</span>
+                            </div>
+                        </div>
+                        
+                        <button data-event="click:joinSupplementsWaitlist" class="w-full bg-gradient-to-r from-medical-green to-emerald-400 text-white py-4 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                            <i class="fas fa-bell mr-2"></i>
+                            Notify Me When Available
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Products Showcase -->
+
+    <!-- @COMPONENT: Interactive Demo -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">See the Science in Action</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explore how our AI technology transforms complex cycle data into actionable health insights.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-rove-blue to-rove-purple rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold">1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Data Collection</h3>
+                                <p class="text-gray-600">Our AI continuously learns from your cycle patterns, symptoms, and lifestyle factors.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold">2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">AI Analysis</h3>
+                                <p class="text-gray-600">Advanced algorithms identify patterns and predict your unique cycle rhythm with precision.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-medical-green to-emerald-400 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold">3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Personalized Recommendations</h3>
+                                <p class="text-gray-600">Receive tailored supplement timing and health insights synchronized to your cycle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Scientific data visualization background -->
+                    <div class="relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-200">
+                        <!-- Scientific data visualization with charts and graphs -->
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                             alt="Scientific data visualization with charts and graphs" 
+                             class="w-full h-64 object-cover rounded-2xl mb-6" />
+                        
+                        <!-- Interactive Cycle Visualization -->
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-gray-600">Cycle Day</span>
+                                <span class="text-2xl font-bold gradient-text" data-bind="cycleDay">14</span>
+                            </div>
+                            
+                            <!-- Cycle Progress Bar -->
+                            <div class="relative w-full h-4 bg-gray-200 rounded-full overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-r from-rove-blue via-rove-purple to-medical-green rounded-full animate-pulse-slow" style="width: 50%"></div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mt-6">
+                                <div class="bg-gradient-to-r from-rove-blue/10 to-rove-purple/10 p-4 rounded-xl">
+                                    <div class="text-xs text-gray-500 mb-1">Prediction Accuracy</div>
+                                    <div class="text-xl font-bold text-rove-blue">99.2%</div>
+                                </div>
+                                <div class="bg-gradient-to-r from-medical-green/10 to-emerald-400/10 p-4 rounded-xl">
+                                    <div class="text-xs text-gray-500 mb-1">Next Period</div>
+                                    <div class="text-xl font-bold text-medical-green">5 days</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Interactive Demo -->
+
+    <!-- @COMPONENT: Scientific Backing -->
+    <section id="science" class="py-20 bg-gradient-to-br from-clinical-gray to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Built on Solid Science</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our research-backed approach combines the latest in AI technology with decades of reproductive health studies.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- @MAP: scientificStats.map(stat => ( -->
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-3xl font-bold gradient-text mb-2">250+</div>
+                    <div class="text-sm text-gray-600">Clinical Studies Analyzed</div>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-3xl font-bold gradient-text mb-2">15+</div>
+                    <div class="text-sm text-gray-600">Medical Advisors</div>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-3xl font-bold gradient-text mb-2">50K+</div>
+                    <div class="text-sm text-gray-600">Beta Test Cycles</div>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="text-3xl font-bold gradient-text mb-2">99.2%</div>
+                    <div class="text-sm text-gray-600">Prediction Accuracy</div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Medical Advisory Board</h3>
+                        <p class="text-lg text-gray-600 mb-8">
+                            Our products are developed in collaboration with leading reproductive endocrinologists, 
+                            AI researchers, and women's health specialists from top medical institutions.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-medical-green to-emerald-400 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user-md text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Dr. Sarah Chen, MD</div>
+                                    <div class="text-sm text-gray-600">Reproductive Endocrinologist, Harvard Medical</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-rove-blue to-rove-purple rounded-full flex items-center justify-center">
+                                    <i class="fas fa-brain text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Dr. Michael Rodriguez, PhD</div>
+                                    <div class="text-sm text-gray-600">AI Research Director, Stanford University</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-female text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Dr. Emily Thompson, MD</div>
+                                    <div class="text-sm text-gray-600">Women's Health Specialist, Mayo Clinic</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <!-- Medical research environment with scientists -->
+                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500" 
+                             alt="Medical research environment with scientists" 
+                             class="w-full h-auto rounded-2xl shadow-lg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Scientific Backing -->
+
+    <!-- @COMPONENT: Waitlist CTA -->
+    <section class="py-20 bg-gradient-to-r from-rove-blue via-rove-purple to-medical-green">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Be First to Experience the Future
+            </h2>
+            <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+                Join thousands of women already on our waitlist. Get early access to revolutionary cycle health technology.
+            </p>
+            
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/20">
+                <!-- @STATE: waitlistForm: { email: string, product: string, submitted: boolean } -->
+                <form data-implementation="Handle waitlist signup with validation" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="relative">
+                            <input 
+                                type="email" 
+                                placeholder="Enter your email address" 
+                                data-bind="waitlistForm.email"
+                                required
+                                class="w-full px-6 py-4 rounded-2xl bg-white/90 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-4 focus:ring-white/50 text-gray-800 placeholder-gray-500" 
+                            />
+                        </div>
+                        <div class="relative">
+                            <select 
+                                data-bind="waitlistForm.product"
+                                class="w-full px-6 py-4 rounded-2xl bg-white/90 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-4 focus:ring-white/50 text-gray-800 appearance-none"
+                            >
+                                <option value="">Choose your interest</option>
+                                <option value="ai-tracker">AI Period Tracker</option>
+                                <option value="supplements">Cycle Sync Supplements</option>
+                                <option value="both">Both Products</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button 
+                        type="submit"
+                        data-event="click:handleWaitlistSubmit"
+                        class="w-full bg-white text-rove-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+                    >
+                        <i class="fas fa-rocket mr-2"></i>
+                        Join Waitlist Now
+                    </button>
+                </form>
+                
+                <div class="mt-8 flex items-center justify-center space-x-8 text-white/80 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-users"></i>
+                        <span data-bind="waitlistCount">12,847</span>
+                        <span>already joined</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-gift"></i>
+                        <span>Early access perks</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>No spam, ever</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Waitlist CTA -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-rove-blue to-rove-purple rounded-lg flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">Rove Health</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Pioneering the future of women's health through AI-powered cycle tracking and personalized supplements.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">AI Period Tracker</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cycle Sync Supplements</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Clinical Research</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Beta Program</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Our Science</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Medical Board</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Rove Health. All rights reserved. | Revolutionizing women's health through technology.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: Success Modal -->
+    <!-- @STATE: showSuccessModal: boolean = false -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden" data-implementation="Show/hide based on form submission success">
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 text-center transform transition-all duration-300">
+            <div class="w-16 h-16 bg-gradient-to-r from-medical-green to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Welcome to the Future!</h3>
+            <p class="text-gray-600 mb-6">
+                You're now on our waitlist. We'll notify you as soon as your selected products are available.
+            </p>
+            <button data-event="click:closeSuccessModal" class="bg-gradient-to-r from-rove-blue to-rove-purple text-white px-8 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300">
+                Got it!
+            </button>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Success Modal -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections for scroll animations
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(section);
+            });
+
+            // Waitlist form handling
+            const waitlistForms = document.querySelectorAll('form');
+            const successModal = document.getElementById('successModal');
+
+            waitlistForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const email = this.querySelector('input[type="email"]');
+                    const select = this.querySelector('select');
+                    
+                    if (!email.value || !email.value.includes('@')) {
+                        alert('Please enter a valid email address');
+                        return;
+                    }
+                    
+                    if (select && !select.value) {
+                        alert('Please select your area of interest');
+                        return;
+                    }
+                    
+                    // Show success modal
+                    successModal.classList.remove('hidden');
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // TODO: Send data to backend API
+                    console.log('Waitlist signup:', {
+                        email: email.value,
+                        product: select ? select.value : 'general',
+                        timestamp: new Date().toISOString()
+                    });
+                });
+            });
+
+            // Close success modal
+            document.querySelector('[data-event="click:closeSuccessModal"]')?.addEventListener('click', function() {
+                successModal.classList.add('hidden');
+            });
+
+            // Close modal when clicking outside
+            successModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                }
+            });
+
+            // Animate cycle day counter
+            const cycleDayElement = document.querySelector('[data-bind="cycleDay"]');
+            if (cycleDayElement) {
+                let currentDay = 1;
+                setInterval(() => {
+                    currentDay = currentDay >= 28 ? 1 : currentDay + 1;
+                    cycleDayElement.textContent = currentDay;
+                }, 2000);
+            }
+
+            // Animate waitlist counter
+            const waitlistCounter = document.querySelector('[data-bind="waitlistCount"]');
+            if (waitlistCounter) {
+                let count = 12847;
+                setInterval(() => {
+                    count += Math.floor(Math.random() * 3) + 1;
+                    waitlistCounter.textContent = count.toLocaleString();
+                }, 5000);
+            }
+
+            // Parallax effect for hero section
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.animate-float');
+                parallaxElements.forEach(element => {
+                    const speed = 0.5;
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

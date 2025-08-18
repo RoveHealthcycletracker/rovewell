@@ -1,0 +1,68 @@
+Rove Health — Privacy Policy
+
+Last Updated: August 2025
+
+At Rove Health, your privacy comes first. We are a doctor-led, AI-powered women’s health platform committed to keeping your data secure, confidential, and always under your control.
+
+1. Information We Collect
+
+We collect only the data needed to deliver safe, personalized health insights:
+
+Account Information: Name, email address (for waitlist, login, or communication).
+
+Cycle & Symptom Data: Period dates, cycle length, symptoms, and optional lifestyle/vitals data.
+
+Supplement Preferences: If you choose to use Rove’s supplements, we may store your intake logs and related choices.
+
+Device & Usage Data: Basic analytics (app version, interactions, crash reports) to improve the experience.
+
+2. How We Use Your Data
+
+We use your data only to provide and improve Rove’s services:
+
+To generate AI-powered cycle coaching (diet, exercise, lifestyle guidance).
+
+To recommend and track phase-specific supplements.
+
+To personalize insights, forecasts, and notifications.
+
+To improve our algorithms and user experience (in de-identified, aggregated form).
+
+3. How We Protect Your Data
+
+Privacy-First Architecture: All personal health data is stored securely with Row-Level Security (RLS) in our database.
+
+Encryption: Data is encrypted in transit (HTTPS/TLS) and at rest.
+
+No Third-Party Selling: We do not sell or share your health data with advertisers.
+
+Access Control: Only you can view and control your personal health record.
+
+4. Your Rights
+
+You have full control over your data:
+
+Access & Update: View and edit your data anytime in the app.
+
+Export: Request a copy of your data in a machine-readable format.
+
+Delete: Request deletion of all your data through in-app settings (we provide a /delete_my_data endpoint).
+
+Consent: You can withdraw your consent for data processing anytime.
+
+5. Data Sharing
+
+We may share anonymized or aggregated insights for medical research, but never identifiable data without your explicit consent.
+
+6. Compliance
+
+Rove Health complies with:
+
+India’s DPDP Act (2023) — user consent, data minimization, and deletion rights.
+
+International best practices (HIPAA-like safeguards where applicable).
+
+7. Contact Us
+
+For questions, concerns, or requests about your data:
+📧 privacy@rovehealth.in

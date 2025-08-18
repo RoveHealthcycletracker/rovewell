@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rove Health - AI-Powered Cycle-Sync Wellness | Coming Soon</title>
+    <meta name="description" content="A medical-grade AI coach that adapts your diet, exercise, and care to each phase of your cycle. Cycle-synced supplements for Indian women.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rovehealth.com/">
+    <meta property="og:title" content="Rove Health - AI-Powered Cycle-Sync Wellness">
+    <meta property="og:description" content="A medical-grade AI coach that adapts your diet, exercise, and care to each phase of your cycle.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rovehealth.com/">
+    <meta property="twitter:title" content="Rove Health - AI-Powered Cycle-Sync Wellness">
+    <meta property="twitter:description" content="A medical-grade AI coach that adapts your diet, exercise, and care to each phase of your cycle.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif']
+                },
+                colors: {
+                    'deep-plum': '#0D0A10',
+                    'ink-plum': '#1A0F1A',
+                    'accent-plum': '#6E3B6E',
+                    'soft-blush': '#F4C4D4',
+                    'mint-fresh': '#CFE8E5',
+                    'ivory-light': '#F6F2F8'
+                },
+                backgroundImage: {
+                    'gradient-main': 'linear-gradient(135deg, #0D0A10 0%, #1A0F1A 100%)',
+                    'grid-pattern': 'linear-gradient(rgba(110, 59, 110, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(110, 59, 110, 0.1) 1px, transparent 1px)'
+                },
+                backgroundSize: {
+                    'grid': '30px 30px'
+                },
+                backdropBlur: {
+                    'glass': '20px'
+                }
+            }
+        }
+    };
+    </script>
+
+    <style>
+        @keyframes gridMove {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 30px 30px, 30px 30px; }
+        }
+        
+        @keyframes ecgLine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100vw); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(110, 59, 110, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(110, 59, 110, 0.6); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-grid {
+            animation: gridMove 8s linear infinite;
+        }
+        
+        .animate-ecg {
+            animation: ecgLine 15s linear infinite;
+        }
+        
+        .animate-pulse-glow {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(246, 242, 248, 0.08);
+            border: 1px solid rgba(246, 242, 248, 0.2);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .carousel {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gradient-main min-h-screen text-ivory-light overflow-x-hidden">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 bg-grid-pattern bg-grid animate-grid opacity-30"></div>
+    
+    <!-- ECG Line Animation -->
+    <div class="fixed top-1/2 w-full h-px bg-gradient-to-r from-transparent via-accent-plum to-transparent animate-ecg opacity-60"></div>
+    
+    <!-- Header/Navigation -->
+    <nav class="relative z-50 p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-ivory-light">
+                <span class="text-accent-plum">Rove</span> Health
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="hover:text-soft-blush transition-colors">Home</a>
+                <a href="#features" class="hover:text-soft-blush transition-colors">Features</a>
+                <a href="#waitlist" class="hover:text-soft-blush transition-colors">Join Waitlist</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-8 animate-fade-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    <span class="bg-gradient-to-r from-ivory-light via-soft-blush to-mint-fresh bg-clip-text text-transparent">
+                        Cycle‑Synced Wellness,
+                    </span>
+                    <br>
+                    <span class="text-accent-plum">Powered by AI.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    A medical‑grade coach that adapts your diet, exercise, and care to each phase of your cycle.
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-up">
+                <button onclick="scrollToSection('waitlist')" class="bg-accent-plum text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-opacity-80 transition-all duration-300 animate-pulse-glow hover-lift">
+                    Join Waitlist
+                </button>
+                <button onclick="scrollToSection('features')" class="border-2 border-accent-plum text-accent-plum px-8 py-4 rounded-xl text-lg font-semibold hover:bg-accent-plum hover:text-white transition-all duration-300">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Teaser Section -->
+    <section id="features" class="relative z-10 py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                
+                <!-- Card A - AI Cycle Coach -->
+                <!-- @COMPONENT: AICoachCard [tracker features and interactive carousel] -->
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <div class="mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-accent-plum to-soft-blush rounded-lg flex items-center justify-center mb-4 animate-float">
+                            <i class="fas fa-brain text-ivory-light text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-ivory-light mb-4">Rove AI Cycle Coach</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Phase‑aware daily plans for Indian women — meals, workouts, and gentle habit nudges, all personalized.
+                        </p>
+                    </div>
+                    
+                    <!-- Interactive Carousel -->
+                    <div class="relative mb-6">
+                        <div class="carousel flex gap-4 overflow-x-auto pb-4" id="aiCarousel">
+                            <!-- Menstrual Phase -->
+                            <div class="flex-shrink-0 w-64 bg-gradient-to-br from-red-900/20 to-red-700/20 rounded-xl p-4 border border-red-500/30">
+                                <h4 class="font-semibold text-red-300 mb-2">Menstrual Phase</h4>
+                                <div class="space-y-2 text-sm text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-utensils text-red-400"></i>
+                                        <span>Iron-rich dal, jaggery treats</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-dumbbell text-red-400"></i>
+                                        <span>Gentle yoga, restorative poses</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Follicular Phase -->
+                            <div class="flex-shrink-0 w-64 bg-gradient-to-br from-green-900/20 to-green-700/20 rounded-xl p-4 border border-green-500/30">
+                                <h4 class="font-semibold text-green-300 mb-2">Follicular Phase</h4>
+                                <div class="space-y-2 text-sm text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-leaf text-green-400"></i>
+                                        <span>Fresh vegetables, sprouts</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-running text-green-400"></i>
+                                        <span>Cardio, strength training</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ovulation Phase -->
+                            <div class="flex-shrink-0 w-64 bg-gradient-to-br from-yellow-900/20 to-yellow-700/20 rounded-xl p-4 border border-yellow-500/30">
+                                <h4 class="font-semibold text-yellow-300 mb-2">Ovulation Phase</h4>
+                                <div class="space-y-2 text-sm text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-sun text-yellow-400"></i>
+                                        <span>Antioxidant-rich fruits</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-heart text-yellow-400"></i>
+                                        <span>High-intensity workouts</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Luteal Phase -->
+                            <div class="flex-shrink-0 w-64 bg-gradient-to-br from-purple-900/20 to-purple-700/20 rounded-xl p-4 border border-purple-500/30">
+                                <h4 class="font-semibold text-purple-300 mb-2">Luteal Phase</h4>
+                                <div class="space-y-2 text-sm text-gray-300">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-cookie-bite text-purple-400"></i>
+                                        <span>Complex carbs, nuts</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-spa text-purple-400"></i>
+                                        <span>Pilates, meditation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carousel Navigation -->
+                        <div class="flex justify-center gap-2 mt-4">
+                            <button onclick="scrollCarousel('aiCarousel', -1)" class="w-2 h-2 rounded-full bg-accent-plum/50 hover:bg-accent-plum transition-colors"></button>
+                            <button onclick="scrollCarousel('aiCarousel', 0)" class="w-2 h-2 rounded-full bg-accent-plum transition-colors"></button>
+                            <button onclick="scrollCarousel('aiCarousel', 1)" class="w-2 h-2 rounded-full bg-accent-plum/50 hover:bg-accent-plum transition-colors"></button>
+                            <button onclick="scrollCarousel('aiCarousel', 2)" class="w-2 h-2 rounded-full bg-accent-plum/50 hover:bg-accent-plum transition-colors"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-mint-fresh">
+                            <i class="fas fa-calendar-check w-4"></i>
+                            <span>Period tracking & forecasts</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-mint-fresh">
+                            <i class="fas fa-user-cog w-4"></i>
+                            <span>Phase‑matched plans</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-mint-fresh">
+                            <i class="fas fa-question-circle w-4"></i>
+                            <span>'Why?' answers with medical references</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Animated Cycle Wave -->
+                    <div class="mt-6 h-16 bg-gradient-to-r from-accent-plum/20 via-soft-blush/20 to-mint-fresh/20 rounded-lg flex items-center justify-center">
+                        <div class="w-full h-1 bg-gradient-to-r from-accent-plum via-soft-blush to-mint-fresh rounded-full animate-pulse"></div>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: AICoachCard -->
+                
+                <!-- Card B - Cycle-Sync Supplement -->
+                <!-- @COMPONENT: SupplementCard [supplement features and bottle carousel] -->
+                <div class="glass-card rounded-2xl p-8 hover-lift">
+                    <div class="mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-mint-fresh to-soft-blush rounded-lg flex items-center justify-center mb-4 animate-float">
+                            <i class="fas fa-pills text-deep-plum text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-ivory-light mb-4">Phase‑wise Supplement System</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Clinically reviewed formulations aligned to menses, follicular, ovulation, and luteal needs.
+                        </p>
+                    </div>
+                    
+                    <!-- Supplement Bottles Carousel -->
+                    <div class="relative mb-6">
+                        <div class="carousel flex gap-4 overflow-x-auto pb-4" id="supplementCarousel">
+                            <!-- Phase 1 Bottle -->
+                            <div class="flex-shrink-0 w-48 text-center">
+                                <!-- Stylized bottle illustration showing women's health supplements -->
+                                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400" alt="Phase 1 Supplement Bottle" class="w-full h-32 object-cover rounded-xl mb-3 opacity-80">
+                                <h4 class="font-semibold text-red-300 mb-1">Comfort</h4>
+                                <p class="text-xs text-gray-400">Iron, Magnesium, Turmeric</p>
+                            </div>
+                            
+                            <!-- Phase 2 Bottle -->
+                            <div class="flex-shrink-0 w-48 text-center">
+                                <!-- Clean health supplement bottles arranged in a clinical setting -->
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400" alt="Phase 2 Supplement Bottle" class="w-full h-32 object-cover rounded-xl mb-3 opacity-80">
+                                <h4 class="font-semibold text-green-300 mb-1">Energy</h4>
+                                <p class="text-xs text-gray-400">B-Complex, Ashwagandha</p>
+                            </div>
+                            
+                            <!-- Phase 3 Bottle -->
+                            <div class="flex-shrink-0 w-48 text-center">
+                                <!-- Modern vitamin supplements with natural ingredients -->
+                                <img src="https://pixabay.com/get/g05c869503eef37555eec83039273f464ce68f78eb0ead1b50499991a78362cff55aecee7d1d392d991cb3d5b96c9af846b778f507f29de6eb3ff28d6ae7a1349_1280.jpg" alt="Phase 3 Supplement Bottle" class="w-full h-32 object-cover rounded-xl mb-3 opacity-80">
+                                <h4 class="font-semibold text-yellow-300 mb-1">Balance</h4>
+                                <p class="text-xs text-gray-400">Zinc, Selenium, Folic Acid</p>
+                            </div>
+                            
+                            <!-- Phase 4 Bottle -->
+                            <div class="flex-shrink-0 w-48 text-center">
+                                <!-- Herbal supplements with clean, minimal packaging -->
+                                <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=400" alt="Phase 4 Supplement Bottle" class="w-full h-32 object-cover rounded-xl mb-3 opacity-80">
+                                <h4 class="font-semibold text-purple-300 mb-1">Calm</h4>
+                                <p class="text-xs text-gray-400">Chaste Tree, Evening Primrose</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-mint-fresh">
+                            <i class="fas fa-leaf w-4"></i>
+                            <span>India‑native ingredients</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-mint-fresh">
+                            <i class="fas fa-shield-alt w-4"></i>
+                            <span>Clean label</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-mint-fresh">
+                            <i class="fas fa-clock w-4"></i>
+                            <span>Timing matched to your phase</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Elegant bottle silhouette with glow -->
+                    <div class="mt-6 h-16 flex items-center justify-center">
+                        <div class="w-8 h-12 bg-gradient-to-b from-mint-fresh/60 to-soft-blush/60 rounded-lg relative">
+                            <div class="absolute inset-0 bg-gradient-to-b from-mint-fresh/30 to-transparent rounded-lg blur-sm"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_COMPONENT: SupplementCard -->
+            </div>
+            
+            <!-- Trust & Clinical Notes -->
+            <div class="text-center mb-12">
+                <div class="inline-flex flex-wrap justify-center gap-6 mb-6">
+                    <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
+                        <i class="fas fa-user-md text-mint-fresh"></i>
+                        <span class="text-sm">Doctor‑led</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
+                        <i class="fas fa-microscope text-mint-fresh"></i>
+                        <span class="text-sm">Evidence‑aware</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
+                        <i class="fas fa-shield-alt text-mint-fresh"></i>
+                        <span class="text-sm">DPDP‑aligned</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-4 py-2 glass-card rounded-full">
+                        <i class="fas fa-globe-asia text-mint-fresh"></i>
+                        <span class="text-sm">India‑native</span>
+                    </div>
+                </div>
+                <p class="text-lg text-gray-300">Medical background × AI rigor. Privacy‑first by design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="relative z-10 py-20 px-6">
+        <div class="max-w-md mx-auto">
+            <div class="glass-card rounded-2xl p-8 text-center">
+                <h2 class="text-3xl font-bold text-ivory-light mb-6">Be first to meet Rove.</h2>
+                
+                <form id="waitlistForm" class="space-y-6">
+                    <div>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            placeholder="Your email address"
+                            class="w-full px-4 py-3 bg-deep-plum/50 border border-accent-plum/30 rounded-xl text-ivory-light placeholder-gray-400 focus:border-accent-plum focus:outline-none focus:ring-2 focus:ring-accent-plum/50 transition-all"
+                        >
+                    </div>
+                    
+                    <div>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Your name (optional)"
+                            class="w-full px-4 py-3 bg-deep-plum/50 border border-accent-plum/30 rounded-xl text-ivory-light placeholder-gray-400 focus:border-accent-plum focus:outline-none focus:ring-2 focus:ring-accent-plum/50 transition-all"
+                        >
+                    </div>
+                    
+                    <div>
+                        <select 
+                            id="goal" 
+                            name="goal"
+                            class="w-full px-4 py-3 bg-deep-plum/50 border border-accent-plum/30 rounded-xl text-ivory-light focus:border-accent-plum focus:outline-none focus:ring-2 focus:ring-accent-plum/50 transition-all"
+                        >
+                            <option value="">Select your wellness goal</option>
+                            <option value="cycle-regularity">Cycle Regularity</option>
+                            <option value="pcos">PCOS</option>
+                            <option value="ttc-soon">TTC soon</option>
+                            <option value="general-wellness">General Wellness</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex items-center gap-3 text-sm text-left">
+                        <input 
+                            type="checkbox" 
+                            id="consent" 
+                            name="consent" 
+                            required
+                            class="w-4 h-4 text-accent-plum bg-deep-plum border-accent-plum/30 rounded focus:ring-accent-plum/50"
+                        >
+                        <label for="consent" class="text-gray-300">
+                            I agree to receive early access updates.
+                        </label>
+                    </div>
+                    
+                    <button 
+                        type="submit"
+                        class="w-full bg-gradient-to-r from-accent-plum to-soft-blush text-white py-3 rounded-xl font-semibold hover:from-accent-plum/80 hover:to-soft-blush/80 transition-all duration-300 animate-pulse-glow"
+                    >
+                        Join the Waitlist
+                    </button>
+                </form>
+                
+                <!-- Success State -->
+                <div id="successMessage" class="hidden mt-6 p-6 bg-gradient-to-r from-mint-fresh/20 to-soft-blush/20 rounded-xl border border-mint-fresh/30">
+                    <div class="text-center">
+                        <i class="fas fa-check-circle text-mint-fresh text-3xl mb-3"></i>
+                        <h3 class="text-lg font-semibold text-ivory-light mb-2">Welcome to Rove!</h3>
+                        <p class="text-sm text-gray-300">You're on the list. We'll be in touch soon with early access.</p>
+                    </div>
+                    <!-- Confetti animation placeholder -->
+                    <div class="confetti-container fixed inset-0 pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-12 px-6 border-t border-accent-plum/20">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex justify-center gap-8 mb-6">
+                <a href="#" class="text-gray-400 hover:text-soft-blush transition-colors">Privacy</a>
+                <a href="#" class="text-gray-400 hover:text-soft-blush transition-colors">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="#" class="text-gray-400 hover:text-soft-blush transition-colors">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+            <p class="text-gray-500">&copy; Rove Health. <span class="text-accent-plum">Launching soon — stay in rhythm.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll functionality
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Carousel functionality
+        function scrollCarousel(carouselId, index) {
+            const carousel = document.getElementById(carouselId);
+            const cardWidth = carousel.children[0].offsetWidth + 16; // width + gap
+            carousel.scrollLeft = cardWidth * Math.max(0, index);
+        }
+
+        // Form submission handling
+        document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // TODO: Implement actual API call to /waitlist endpoint
+            console.log('Waitlist submission:', data);
+            
+            // Mock API response
+            try {
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Show success state
+                document.getElementById('waitlistForm').style.display = 'none';
+                document.getElementById('successMessage').classList.remove('hidden');
+                
+                // Trigger confetti animation
+                createConfetti();
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                // TODO: Show error state
+            }
+        });
+
+        // Confetti animation
+        function createConfetti() {
+            const container = document.querySelector('.confetti-container');
+            const colors = ['#6E3B6E', '#F4C4D4', '#CFE8E5', '#F6F2F8'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.cssText = `
+                    position: absolute;
+                    width: 8px;
+                    height: 8px;
+                    background: ${colors[Math.floor(Math.random() * colors.length)]};
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: -10px;
+                    animation: confettiFall 3s ease-out forwards;
+                    opacity: 0.8;
+                `;
+                container.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Add confetti fall animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confettiFall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.glass-card, .trust-badge');
+            animateElements.forEach(el => observer.observe(el));
+        });
+
+        // Auto-scroll carousels
+        (function() {
+            let carouselIndex = 0;
+            setInterval(() => {
+                const carousels = ['aiCarousel', 'supplementCarousel'];
+                carousels.forEach(carouselId => {
+                    scrollCarousel(carouselId, carouselIndex % 4);
+                });
+                carouselIndex++;
+            }, 4000);
+        })();
+    </script>
+</body>
+</html>
