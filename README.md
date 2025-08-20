@@ -1,64 +1,156 @@
-# RoveWell - Development Setup
+# RoveWell - AI-Powered PCOS Assessment Tool
 
-## 🚀 Quick Start
+A comprehensive women's health platform featuring an intelligent PCOS (Polycystic Ovary Syndrome) assessment tool powered by OpenAI's GPT-4.
 
-### Option 1: Run Frontend + Backend Separately (Recommended)
+## 🚀 Features
 
-**Frontend on port 5173 + Backend on port 5000:**
-```bash
-npm run dev:full
-```
+### AI-Enhanced PCOS Assessment
+- **Intelligent Analysis**: Uses OpenAI GPT-4 for personalized symptom analysis
+- **Rotterdam Criteria**: Based on established medical criteria for PCOS diagnosis
+- **Personalized Insights**: AI-generated insights specific to individual symptom patterns
+- **Lifestyle Recommendations**: Tailored lifestyle and wellness advice
+- **Medical Priorities**: Prioritized medical concerns for healthcare discussions
+- **Risk Scoring**: Numerical risk assessment (0-100) with detailed explanations
 
-**Or run them individually:**
-```bash
-# Terminal 1 - Backend API server
-npm run dev:backend
+### Coming Soon Page
+- Beautiful, animated landing page for Rove Health
+- Waitlist signup functionality
+- Seamless integration with assessment tool
 
-# Terminal 2 - Frontend Vite dev server  
-npm run dev:frontend
-```
-
-### Option 2: Full-stack Mode (Legacy)
-
-**Frontend + Backend on port 5000:**
-```bash
-npm run dev
-```
-
-## 🌐 Access Points
-
-- **Frontend**: http://localhost:5173 ✨
-- **Backend API**: http://localhost:5000/api
-- **Full-stack**: http://localhost:5000 (when using legacy mode)
-
-## 📝 Available Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev:full` | Run both frontend and backend servers |
-| `npm run dev:frontend` | Run only Vite frontend server (port 5173) |
-| `npm run dev:backend` | Run only Express backend server (port 5000) |
-| `npm run dev` | Run full-stack mode (frontend + backend on port 5000) |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-
-## 🔧 Configuration
-
-- **Frontend**: Vite config at `vite.config.ts`
-- **Backend**: Express server at `server/index.ts`
-- **Database**: Drizzle ORM with Supabase PostgreSQL
-- **API Proxy**: Frontend `/api/*` routes proxy to backend
-
-## 🎯 Development Workflow
-
-1. Start development servers: `npm run dev:full`
-2. Frontend auto-reloads on file changes (port 5173)
-3. Backend auto-reloads with tsx (port 5000)
-4. API calls from frontend automatically proxy to backend
-
-## 📦 Tech Stack
+## 🛠️ Tech Stack
 
 - **Frontend**: React + TypeScript + Vite + Tailwind CSS
-- **Backend**: Express + TypeScript + Drizzle ORM
-- **Database**: Supabase PostgreSQL
-- **UI Components**: Radix UI + shadcn/ui
+- **Backend**: Node.js + Express + TypeScript
+- **AI**: OpenAI GPT-4 API
+- **Database**: PostgreSQL + Drizzle ORM
+- **Styling**: Framer Motion animations + Custom design system
+
+## 📋 Prerequisites
+
+- Node.js 18+ 
+- PostgreSQL database
+- OpenAI API key
+
+## 🔧 Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd RoveWell
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Configuration**
+   Create a `.env` file in the root directory:
+   ```env
+   # Database Configuration
+   DATABASE_URL="postgresql://username:password@localhost:5432/rovewell"
+   
+   # OpenAI Configuration (Required for AI assessment)
+   OPENAI_API_KEY="your-openai-api-key-here"
+   
+   # Server Configuration
+   PORT=5000
+   NODE_ENV=development
+   
+   # Session Configuration
+   SESSION_SECRET="your-session-secret-here"
+   ```
+
+4. **Database Setup**
+   ```bash
+   npm run db:push
+   ```
+
+5. **Start Development Servers**
+   ```bash
+   # Start both frontend and backend
+   npm run dev:full
+   
+   # Or start individually:
+   npm run dev:backend  # Backend on port 5000
+   npm run dev:frontend # Frontend on port 5173
+   ```
+
+## 🎯 Usage
+
+### PCOS Assessment Flow
+1. Visit the homepage at `http://localhost:5173`
+2. Click "Try our Free PCOS Assessment"
+3. Complete the 8-question assessment
+4. Receive AI-powered personalized results including:
+   - Risk assessment and score
+   - Personalized insights
+   - Lifestyle recommendations
+   - Medical priorities
+   - Next steps and resources
+
+### API Endpoints
+
+- `POST /api/assess` - AI-powered PCOS assessment
+- `POST /api/waitlist` - Join waitlist
+- `GET /api/waitlist` - Get waitlist entries (admin)
+
+## 🤖 AI Features
+
+The assessment tool uses OpenAI's GPT-4 to provide:
+
+- **Contextual Analysis**: Understands symptom relationships and patterns
+- **Medical Accuracy**: Based on Rotterdam criteria and clinical guidelines
+- **Personalization**: Tailored recommendations based on unique symptom combinations
+- **Compassionate Tone**: Supportive, empathetic communication
+- **Fallback System**: Rule-based assessment if AI is unavailable
+
+## 🎨 Design System
+
+The application uses a custom design system with:
+- **Color Palette**: Deep plum, ink dark, blush, mint, champagne, ivory
+- **Animations**: Framer Motion for smooth, engaging interactions
+- **Typography**: Modern, readable fonts with proper hierarchy
+- **Components**: Reusable UI components with consistent styling
+
+## 🔒 Security & Privacy
+
+- Medical disclaimer prominently displayed
+- No personal health data stored permanently
+- Assessment results stored only in session storage
+- Secure API communication with OpenAI
+
+## 📱 Responsive Design
+
+- Mobile-first approach
+- Touch-friendly interactions
+- Optimized for all screen sizes
+- Accessible design patterns
+
+## 🚀 Deployment
+
+The application is ready for deployment on platforms like:
+- Vercel
+- Netlify
+- Railway
+- Heroku
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 📄 License
+
+MIT License - see LICENSE file for details
+
+## 🆘 Support
+
+For questions or support, please open an issue in the repository.
+
+---
+
+**Note**: This tool is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider.

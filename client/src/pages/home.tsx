@@ -131,10 +131,21 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute top-full left-0 right-0 z-40 md:hidden bg-deep-plum/95 backdrop-blur-xl"
+            className="fixed top-0 left-0 right-0 bottom-0 z-50 md:hidden bg-deep-plum/98 backdrop-blur-xl"
             data-testid="mobile-menu"
           >
-            <div className="container mx-auto px-4 sm:px-6 py-6">
+            <div className="container mx-auto px-4 sm:px-6 py-6 pt-20">
+              {/* Close button */}
+              <div className="flex justify-end mb-4">
+                <motion.button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-10 h-10 rounded-full bg-ivory/10 backdrop-blur-sm flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <i className="fas fa-times text-ivory text-lg"></i>
+                </motion.button>
+              </div>
               <div className="space-y-2">
                 {[
                   { name: "Home", section: "hero", icon: "fas fa-home" },

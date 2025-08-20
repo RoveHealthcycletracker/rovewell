@@ -40,7 +40,7 @@ export default function HeroSection({ onJoinWaitlist, onLearnMore }: HeroSection
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center px-4 max-w-md sm:max-w-none mx-auto"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center px-4 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -49,7 +49,7 @@ export default function HeroSection({ onJoinWaitlist, onLearnMore }: HeroSection
               onClick={onJoinWaitlist}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-gradient-to-r from-plum to-rose-gold hover:from-rose-gold hover:to-plum px-6 sm:px-8 py-4 sm:py-4 rounded-2xl text-ivory font-semibold text-lg shadow-2xl transform transition-all duration-300 animate-pulse-glow w-full sm:w-auto mobile-touch-target"
+              className="group bg-gradient-to-r from-mint to-blush hover:from-blush hover:to-mint px-6 sm:px-8 py-4 sm:py-4 rounded-2xl text-ivory font-semibold text-lg shadow-2xl transform transition-all duration-300 animate-pulse-glow w-full sm:w-auto mobile-touch-target"
               data-testid="button-join-waitlist-hero"
             >
               <motion.span 
@@ -59,7 +59,7 @@ export default function HeroSection({ onJoinWaitlist, onLearnMore }: HeroSection
               >
                 Join Waitlist
                 <motion.i 
-                  className="fas fa-rocket ml-2 text-lg"
+                  className="fas fa-heartbeat ml-2 text-lg text-white"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -82,6 +82,46 @@ export default function HeroSection({ onJoinWaitlist, onLearnMore }: HeroSection
                 />
               </span>
             </motion.button>
+          </motion.div>
+          
+          {/* PCOS Assessment CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 px-4"
+          >
+            <div className="max-w-lg mx-auto text-center">
+              <motion.p 
+                className="text-champagne/70 mb-4 text-sm sm:text-base"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+              >
+                Wondering about your symptoms?
+              </motion.p>
+              <motion.a
+                href="/assessment"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="group inline-flex items-center justify-center bg-gradient-to-r from-deep-plum/60 to-plum/60 backdrop-blur-sm border border-blush/40 hover:border-blush/60 px-6 py-3 rounded-xl text-blush hover:text-ivory font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                data-testid="button-pcos-assessment"
+              >
+                <span className="flex items-center">
+                  <motion.i 
+                    className="fas fa-stethoscope mr-2 text-sm"
+                    whileHover={{ rotate: 15 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  Try our Free Women's Health Assessment
+                  <motion.i 
+                    className="fas fa-arrow-right ml-2 text-sm"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                </span>
+              </motion.a>
+            </div>
           </motion.div>
         </motion.div>
       </div>

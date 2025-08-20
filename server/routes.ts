@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertWaitlistSchema } from "@shared/schema";
 import { z } from "zod";
+import { analyzeWithAI } from "./ai-assessment";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -65,6 +66,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       res.status(500).json({ 
         message: "Internal server error" 
+      });
+    }
+  });
+
+  // PCOS Assessment endpoint with AI enhancement
+  app.post("/api/assess", async (req, res) => {
+    try {
+      const { answers } = req.body;
+      
+      if (!answers || typeof answers !== 'object') {
+        return res.status(400).json({ 
+          message: "Invalid assessment data",
+          success: false 
+        });
+      }
+
+      // Use AI-powered analysis with fallback to rule-based assessment
+      const result = await analyzeWithAI(answers);
+
+      res.json({
+        ...result,
+        success: true
+      });
+
+    } catch (error) {
+      console.error('Error processing PCOS assessment:', error);
+      res.status(500).json({ 
+        message: "Internal server error processing assessment",
+        success: false 
       });
     }
   });

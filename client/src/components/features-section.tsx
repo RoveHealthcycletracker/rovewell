@@ -30,16 +30,72 @@ export default function FeaturesSection() {
   };
 
   const aiFeatures = [
-    { title: "Period Prediction", desc: "AI learns your unique patterns", icon: "fas fa-calendar-alt", color: "mint" },
-    { title: "Phase-Smart Plans", desc: "Workouts & meals that sync", icon: "fas fa-user-cog", color: "blush" },
-    { title: "Medical Insights", desc: "Evidence-backed explanations", icon: "fas fa-microscope", color: "rose-gold" }
+    { 
+      title: "Period Prediction", 
+      desc: "AI learns your unique patterns", 
+      icon: "fas fa-calendar-alt", 
+      color: "mint",
+      tags: ["AI-Powered", "Predictive"]
+    },
+    { 
+      title: "Phase-Smart Plans", 
+      desc: "Workouts & meals that sync", 
+      icon: "fas fa-user-cog", 
+      color: "blush",
+      tags: ["Personalized", "Adaptive"]
+    },
+    { 
+      title: "Medical Insights", 
+      desc: "Evidence-backed explanations", 
+      icon: "fas fa-microscope", 
+      color: "rose-gold",
+      tags: ["Evidence-Based", "Clinical"]
+    },
+    { 
+      title: "Symptom Tracking", 
+      desc: "Smart monitoring & alerts", 
+      icon: "fas fa-chart-line", 
+      color: "plum",
+      tags: ["Monitoring", "Smart"]
+    },
+    { 
+      title: "Cycle Education", 
+      desc: "Learn about your body", 
+      icon: "fas fa-graduation-cap", 
+      color: "mint",
+      tags: ["Educational", "Empowering"]
+    }
   ];
 
   const supplementPhases = [
-    { phase: "Menses", color: "mint", nutrients: ["Iron", "Magnesium"], desc: "Recovery & comfort" },
-    { phase: "Follicular", color: "blush", nutrients: ["B6", "Zinc"], desc: "Energy & renewal" },
-    { phase: "Ovulation", color: "rose-gold", nutrients: ["Vitamin E", "Selenium"], desc: "Peak vitality" },
-    { phase: "Luteal", color: "plum", nutrients: ["B Complex", "Calcium"], desc: "Balance & calm" }
+    { 
+      phase: "Menses", 
+      color: "mint", 
+      nutrients: ["Iron", "Magnesium", "Vitamin C"], 
+      desc: "Recovery & comfort",
+      tags: ["Recovery", "Comfort"]
+    },
+    { 
+      phase: "Follicular", 
+      color: "blush", 
+      nutrients: ["B6", "Zinc", "Folate"], 
+      desc: "Energy & renewal",
+      tags: ["Energy", "Renewal"]
+    },
+    { 
+      phase: "Ovulation", 
+      color: "rose-gold", 
+      nutrients: ["Vitamin E", "Selenium", "CoQ10"], 
+      desc: "Peak vitality",
+      tags: ["Vitality", "Peak"]
+    },
+    { 
+      phase: "Luteal", 
+      color: "plum", 
+      nutrients: ["B Complex", "Calcium", "Magnesium"], 
+      desc: "Balance & calm",
+      tags: ["Balance", "Calm"]
+    }
   ];
 
   // Auto-cycle through features (optimized intervals)
@@ -116,13 +172,15 @@ export default function FeaturesSection() {
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className={`px-3 py-1 rounded-full text-xs bg-${aiFeatures[activeAIFeature].color}/20 text-${aiFeatures[activeAIFeature].color} border border-${aiFeatures[activeAIFeature].color}/30`}>
-                    Personalized
-                  </span>
-                  <span className={`px-3 py-1 rounded-full text-xs bg-${aiFeatures[activeAIFeature].color}/20 text-${aiFeatures[activeAIFeature].color} border border-${aiFeatures[activeAIFeature].color}/30`}>
-                    AI-Powered
-                  </span>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  {aiFeatures[activeAIFeature].tags.map((tag, index) => (
+                    <span 
+                      key={index}
+                      className={`px-2 sm:px-3 py-1 rounded-full text-xs bg-${aiFeatures[activeAIFeature].color}/20 text-${aiFeatures[activeAIFeature].color} border border-${aiFeatures[activeAIFeature].color}/30`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </motion.div>
               
@@ -201,13 +259,23 @@ export default function FeaturesSection() {
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3">
                   {supplementPhases[activeSupplementPhase].nutrients.map((nutrient, idx) => (
                     <span 
                       key={idx}
-                      className={`px-3 py-1 rounded-full text-xs bg-${supplementPhases[activeSupplementPhase].color}/20 text-${supplementPhases[activeSupplementPhase].color} border border-${supplementPhases[activeSupplementPhase].color}/30`}
+                      className={`px-2 sm:px-3 py-1 rounded-full text-xs bg-${supplementPhases[activeSupplementPhase].color}/20 text-${supplementPhases[activeSupplementPhase].color} border border-${supplementPhases[activeSupplementPhase].color}/30`}
                     >
                       {nutrient}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  {supplementPhases[activeSupplementPhase].tags.map((tag, idx) => (
+                    <span 
+                      key={idx}
+                      className={`px-2 sm:px-3 py-1 rounded-full text-xs bg-${supplementPhases[activeSupplementPhase].color}/10 text-${supplementPhases[activeSupplementPhase].color} border border-${supplementPhases[activeSupplementPhase].color}/20`}
+                    >
+                      {tag}
                     </span>
                   ))}
                 </div>
